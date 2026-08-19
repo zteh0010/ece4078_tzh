@@ -62,8 +62,9 @@ def setup_gpio():
     
     # Initialize PWM (frequency: 1000Hz)
     global left_motor_pwm, right_motor_pwm
-    left_motor_pwm = GPIO.PWM(LEFT_MOTOR_ENB, 1000)
-    right_motor_pwm = GPIO.PWM(RIGHT_MOTOR_ENA, 1000)
+    hz=2000
+    left_motor_pwm = GPIO.PWM(LEFT_MOTOR_ENB, hz)
+    right_motor_pwm = GPIO.PWM(RIGHT_MOTOR_ENA, hz)
     left_motor_pwm.start(0)
     right_motor_pwm.start(0)
 
